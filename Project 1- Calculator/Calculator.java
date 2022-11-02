@@ -3,13 +3,20 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) throws InterruptedException{
         Scanner input = new Scanner(System.in); //read keyboard input
+        //Keep calulator up
+        
+        boolean loope;
+        while (loope=true){
+        // Introduction
         System.out.println("Welcome to the java calculator! You can: ");
         System.out.println("Add \n Subtract \n Multiply \n Divide \n and sort out which word comes first in the dictionary (sort)");
         // Wait for a few seconds 
-        TimeUnit.SECONDS.sleep(3);
+        TimeUnit.SECONDS.sleep(2);
+
         System.out.println("What operation would you like to use?");
         String operation = input.next().toLowerCase();
         // could use if else or select cases here, I'm not sure which is more efficient memory wise
+        // addition clauses
         if (operation.equals( "add")){
             System.out.println("Please enter two integers, ");
             System.out.println("Int 1:");
@@ -18,7 +25,7 @@ public class Calculator {
             int int2= input.nextInt();
             int total = int1+int2;
             System.out.println("The sum is " +int1+"+"+int2+ "="+total);
-        }
+        }// subtration clauses
         else if (operation.equals("subtract") || operation.equals("sub")){
             System.out.println("Please enter two integers, ");
             System.out.println("Int 1:");
@@ -27,7 +34,7 @@ public class Calculator {
             int int2= input.nextInt();
             int total = int1-int2;
             System.out.println("The sum is " +int1+"-"+int2+ "="+total);
-        }
+        }// division clauses
         else if (operation.equals("divide") || operation.equals("div")){
             System.out.println("Please enter two doubles, ");
             System.out.println("Double 1: ");
@@ -40,7 +47,7 @@ public class Calculator {
             }
             Double total = int1/int2;
             System.out.println("The sum is " +int1+"/"+int2+ "="+total);
-        }
+        }// multiplication clauses
         else if (operation.equals("multiply") || operation.equals("times")){
             System.out.println("Please enter two doubles, ");
             System.out.println("Double 1: ");
@@ -49,13 +56,15 @@ public class Calculator {
             Double int2= input.nextDouble();
             Double total = int1*int2;
             System.out.println("The sum is " +int1+"*"+int2+ "="+total);
-        }
+        }// string clauses
         else if (operation.equals("sort")){
             System.out.println("Please enter two words, ");
             System.out.println("Word 1:");
             String string1 = input.next().toLowerCase();
             System.out.println("Word 2:");
             String string2= input.next().toLowerCase();
+            //returns an int that is postive if string 2 is bigger than string 1
+            //negative if string 2 is smaller than string 1 and 0 if they are the same
             int check = string1.compareTo(string2);
             
             if (check > 0){
@@ -73,7 +82,16 @@ public class Calculator {
             System.out.println("Invalid entry: Please choose from: \n Add \n Subtract \n Divide \n Multiply \n Sort");
             operation = input.next().toLowerCase();
         }
-
+        System.out.println("Would you like to continue? (y/n): ");
+        String ans =input.next();
+        if (ans.equals("y")){
+            loope=true;
+        }
+        else{
+            loope =false;
+            break;
+        }
+    }
         // switch(operation){
         // case "add":
         // break;
