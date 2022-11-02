@@ -5,8 +5,7 @@ public class Calculator {
         Scanner input = new Scanner(System.in); //read keyboard input
         //Keep calulator up
         
-        boolean loope;
-        while (loope=true){
+        
         // Introduction
         System.out.println("Welcome to the java calculator! You can: ");
         System.out.println("Add \n Subtract \n Multiply \n Divide \n and sort out which word comes first in the dictionary (sort)");
@@ -82,16 +81,8 @@ public class Calculator {
             System.out.println("Invalid entry: Please choose from: \n Add \n Subtract \n Divide \n Multiply \n Sort");
             operation = input.next().toLowerCase();
         }
-        System.out.println("Would you like to continue? (y/n): ");
-        String ans =input.next();
-        if (ans.equals("y")){
-            loope=true;
-        }
-        else{
-            loope =false;
-            break;
-        }
-    }
+    
+ 
         // switch(operation){
         // case "add":
         // break;
@@ -108,5 +99,5 @@ public class Calculator {
         // operation = input.next();
         // }
     input.close();
-    }
+        }
 }

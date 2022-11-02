@@ -5,21 +5,32 @@ public class ArraySearch {
                             "inheritance",
                             "encapsulation"
         };
-        String result = searchStringArray("abstraction", concepts);
+        boolean result = searchArray("abstraction", concepts);
 
         System.out.println(result);
 
 
         
     }
-    public static String searchStringArray(String target, String[] array){
-        String result ="not found";
-        for (String targets : array){
-            if(targets.equals(target)){
-                result="found";
-                break;
-            }
+    public static boolean searchArray(String target, String[] array) {
+    boolean result = false;
+    for (String element : array) {
+        if ((element != null) && (element.equals(target))) {
+            result = true;
+            break;
         }
-        return result;
     }
+    return result;
+    }
+
+public static boolean searchArray(int target, int[] array) {
+    boolean result = false;
+    for (int element : array) {
+        if (element == target) {
+            result = true;
+            break;
+        }
+    }
+    return result;
+}
 }
