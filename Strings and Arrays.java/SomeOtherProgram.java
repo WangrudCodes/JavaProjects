@@ -4,9 +4,5 @@ public class SomeOtherProgram {
         int[] chic = {0,1,5,9,7};
             System.out.println(ArraySearch.searchArray("hey",check));
             System.out.println(ArraySearch.searchArray(1,chic));
-
-
-
-
     }
 }
